@@ -85,8 +85,7 @@
     <main>
       <h1 class="intro">kubectl explain Tyler N.</h1>
       <div class="tagline">
-        <span class="tagline-static">Enterprise Solution Architect</span>
-        <span class="tagline-rotating" aria-live="polite"> | Elasticsearch Consultant</span>
+        <span class="tagline-rotating" aria-live="polite">Enterprise Solution Architect</span>
       </div>
       <div class="icons-social">
         <a target="_blank" rel="noopener noreferrer" href="mailto:tylern91@duck.com" aria-label="Contact me via email" data-tooltip="Email">
@@ -115,6 +114,7 @@
 
     <script>
       const roles = [
+        'Enterprise Solution Architect',
         'Elasticsearch Consultant',
         'Cloud-Native Evangelist',
         'Digital Transformation',
@@ -126,7 +126,7 @@
       function rotate() {
         el.classList.add('hidden');
         setTimeout(() => {
-          el.textContent = ' | ' + roles[index % roles.length];
+          el.textContent = roles[index % roles.length];
           el.classList.remove('hidden');
           index++;
         }, 400);
