@@ -4,6 +4,20 @@ html {
 	font-family: 'Roboto', sans-serif;
 }
 
+/* Entrance animation */
+@keyframes fadeInUp {
+	from { opacity: 0; transform: translateY(20px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+main > * {
+	animation: fadeInUp 0.6s ease both;
+}
+
+main > .intro	{ animation-delay: 0.1s; }
+main > .tagline      { animation-delay: 0.3s; }
+main > .icons-social { animation-delay: 0.5s; }
+
 @media (min-width: 576px) {
 	html {
 		font-size: 14px;
@@ -30,6 +44,16 @@ html {
 
 .icons-social i {
 	font-size: 3em;
+}
+
+/* Rotating tagline */
+.tagline-rotating {
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+.tagline-rotating.visible {
+	opacity: 1;
 }
 
 /* Custom Styles */
@@ -59,13 +83,52 @@ main > .tagline {
 	padding: 10px;
 }
 
+/* Tooltip on hover */
+.icons-social a {
+	position: relative;
+}
+
+.icons-social a::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	bottom: -1.8rem;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0.65rem;
+	white-space: nowrap;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	pointer-events: none;
+}
+
+.icons-social a:hover::after {
+	opacity: 1;
+}
+
+/* Brand icon hover colors */
+.icons-social a[aria-label*="email"]:hover i	{ color: #EA4335; }
+.icons-social a[aria-label*="Telegram"]:hover i     { color: #2AABEE; }
+.icons-social a[aria-label*="WhatsApp"]:hover i     { color: #25D366; }
+.icons-social a[aria-label*="Github"]:hover i       { color: #333; }
+.icons-social a[aria-label*="LinkedIn"]:hover i     { color: #0A66C2; }
+.icons-social a[aria-label*="Medium"]:hover i       { color: #000; }
+.icons-social a[aria-label*="Calendly"]:hover i     { color: #006BFF; }
+
+.icons-social a i {
+	transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.icons-social a:hover i {
+	transform: scale(1.15);
+}
+
 .devto {
 	margin-bottom: -0.20rem;
 }
 
 .devto svg {
 	margin-bottom: -0.20rem;
-	margin-left: 0.675rem;;
+	margin-left: 0.675rem;
 	width: 2.65rem;
 	height: 2.65rem;
 }

@@ -7,31 +7,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="CbHepeyoIvygHtsZ843n5TCfkWrrJLMlA4BiWYCQFgI" />
 
-    <title>Tyler N. | Cloud Platform Evangelist </title>
+    <!-- SEO -->
+    <meta name="description" content="Tyler Nguyen — Enterprise Solution Architect, Elasticsearch Consultant, and Cloud-Native Evangelist specializing in Fintech, Virtual Banking, and Digital Transformation." />
+    <meta name="author" content="Tyler Nguyen" />
+    <link rel="canonical" href="https://tylern91.github.io/" />
 
-    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300&display=swap" rel="stylesheet">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tylern91.github.io/" />
+    <meta property="og:title" content="Tyler N. | Enterprise Solution Architect" />
+    <meta property="og:description" content="Enterprise Solution Architect, Elasticsearch Consultant, and Cloud-Native Evangelist specializing in Fintech, Virtual Banking, and Digital Transformation." />
+    <meta property="og:image" content="https://tylern91.github.io/favicon.ico" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Tyler N. | Enterprise Solution Architect" />
+    <meta name="twitter:description" content="Enterprise Solution Architect, Elasticsearch Consultant, and Cloud-Native Evangelist." />
+
+    <title>Tyler N. | Enterprise Solution Architect</title>
+
+    <!-- Performance: preconnect to font origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/png" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/themes/white-grey.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Tyler Nguyen",
+      "url": "https://tylern91.github.io/",
+      "jobTitle": "Enterprise Solution Architect",
+      "sameAs": [
+        "https://github.com/tylern91",
+        "https://www.linkedin.com/in/tylern91",
+        "https://medium.com/@tylern91"
+      ]
+    }
+    </script>
   </head>
 
   <body>
     <main>
-      <div class="intro">kubectl explain Tyler N.</div>
-      <div class="tagline">Enterprise Solution Architect | Elasticsearch Consultant | Digital Transformation | Fintech | Virtual Banking | Cloud-Native Evangelist</div>
+      <h1 class="intro">kubectl explain Tyler N.</h1>
+      <div class="tagline">
+        <span class="tagline-static">Enterprise Solution Architect</span>
+        <span class="tagline-rotating" aria-live="polite"></span>
+      </div>
       <!-- Find your icons from here - https://fontawesome.com/icons?d=gallery&s=brands -->
       <div class="icons-social">
-        <a target="_blank" href="mailto:tylern91@duck.com" aria-label="Contact me via email"><i class="far fa-envelope-open"></i></a>
-        <a target="_blank" href="https://t.me/tylern91" aria-label="Contact me via Telegram"><i class="fab fa-telegram"></i></a>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=84989799990" aria-label="Contact me via WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a target="_blank" href="https://github.com/tylern91" aria-label="Connect me via my Github profile"><i class="fab fa-github"></i></a>
-        <a target="_blank" href="https://www.linkedin.com/in/tylern91" aria-label="Connect me via my LinkedIn profile"><i class="fab fa-linkedin"></i></a>
-        <a target="_blank" href="https://medium.com/@tylern91" aria-label="Check out my articles on Medium"><i class="fab fa-medium"></i></a>
-        <a target="_blank" href="https://calendly.com/tylern91/have-a-sip" aria-label="Schedule a 60-minute call with me via Calendly"><i class="far fa-calendar-plus"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="mailto:tylern91@duck.com" aria-label="Contact me via email" data-tooltip="Email"><i class="far fa-envelope-open"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://t.me/tylern91" aria-label="Contact me via Telegram" data-tooltip="Telegram"><i class="fab fa-telegram"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=84989799990" aria-label="Contact me via WhatsApp" data-tooltip="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/tylern91" aria-label="Connect me via my Github profile" data-tooltip="GitHub"><i class="fab fa-github"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/tylern91" aria-label="Connect me via my LinkedIn profile" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://medium.com/@tylern91" aria-label="Check out my articles on Medium" data-tooltip="Medium"><i class="fab fa-medium"></i></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://calendly.com/tylern91/have-a-sip" aria-label="Schedule a 60-minute call with me via Calendly" data-tooltip="Calendly"><i class="far fa-calendar-plus"></i></a>
       </div>
     </main>
+
+    <script>
+      const roles = [
+        'Elasticsearch Consultant',
+        'Cloud-Native Evangelist',
+        'Digital Transformation',
+        'Fintech & Virtual Banking',
+      ];
+      const el = document.querySelector('.tagline-rotating');
+      let index = 0;
+
+      function rotate() {
+        el.classList.remove('visible');
+        setTimeout(() => {
+          el.textContent = ' | ' + roles[index % roles.length];
+          el.classList.add('visible');
+          index++;
+        }, 400);
+      }
+
+      rotate();
+      setInterval(rotate, 3000);
+    </script>
   </body>
 
 </html>
